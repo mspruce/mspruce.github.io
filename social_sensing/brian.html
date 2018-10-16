@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Map</title>
+<title>Brian Map</title>
 
 <head>
 	<!-- TEST -->
@@ -522,10 +522,10 @@ overflow: auto;
 	
 	function date_to_src(){
 		datafile = "data/tweet_data_brian.json";
-		tweetkey = "tweet_data_tweets.json";
-		coarsekey = "tweet_data_10x10.json";
-		finekey = "tweet_data_40x40.json";
-		countykey = "tweet_data_county.json";
+		tweetkey = "brian_tweet_data_tweets.json";
+		coarsekey = "brian_tweet_data_10x10.json";
+		finekey = "brian_tweet_data_40x40.json";
+		countykey = "brian_tweet_data_county.json";
 		return { "file" : datafile, "tweets" : tweetkey, "county" : countykey , "fine" : finekey, "coarse" : coarsekey }
 	}
 	function load_tweets(){
