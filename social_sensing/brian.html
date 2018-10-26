@@ -521,11 +521,11 @@ overflow: auto;
 	var active_keys = date_to_src();
 	
 	function date_to_src(){
-		datafile = "data/tweet_data_brian.json";
-		tweetkey = "brian_tweet_data_tweets.json";
-		coarsekey = "brian_tweet_data_10x10.json";
-		finekey = "brian_tweet_data_40x40.json";
-		countykey = "brian_tweet_data_county.json";
+		datafile = "data/all_brian_tweets.json";
+		tweetkey = "all_tweets.json";
+		coarsekey = "all_10x10_tweets.json";
+		finekey = "all_40x40_tweets.json";
+		countykey = "all_county_tweets.json";
 		return { "file" : datafile, "tweets" : tweetkey, "county" : countykey , "fine" : finekey, "coarse" : coarsekey }
 	}
 	function load_tweets(){
