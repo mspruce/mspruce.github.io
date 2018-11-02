@@ -225,7 +225,7 @@ overflow: auto;
 	var sub_hours_from = 0;
 	var sub_hours_to = 0;
 	var min_time = new Date(2017, 9, 16, 0, 0, 0, 0);  //need to enter month-1 here for some reason!!
-	var max_time = new Date(2017, 9, 25, 0, 0, 0, 0);
+	var max_time = new Date(2017, 9, 31, 23, 0, 0, 0);
 
 	//min_time.setHours(min_time.getHours() - 24 );
 	//min_time.setMinutes( Math.floor(min_time.getMinutes()/10)*10 )
@@ -787,12 +787,12 @@ overflow: auto;
 	$( function() {
     $( ".timeslider" ).slider({
 		  range: true,
-		  min: -216,
+		  min: -360,
 		  max: 0,
 		  values: [ -24, 0 ],
 		  slide: function( event, ui ) {
 			  min_time.setTime(earliest.getTime())
-			  min_time.setHours(earliest .getHours() + (216+ui.values[ 0 ]) );
+			  min_time.setHours(earliest .getHours() + (360+ui.values[ 0 ]) );
 			  show_time_from = datetoString( min_time ) 
 
 			  max_time.setTime(latest.getTime())
