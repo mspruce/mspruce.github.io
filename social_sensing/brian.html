@@ -461,11 +461,11 @@ overflow: auto;
 			if(!re && poly == "county"){
 				latest.setMinutes( Math.floor((latest.getMinutes()+1)/10)*10  );
 				earliest.setMinutes( Math.floor((earliest.getMinutes())/10)*10  );
-				show_time_from = datetoString(earliest)
+				/*show_time_from = datetoString(earliest)
 				show_time_to = datetoString(latest)
 				min_time.setTime(earliest.getTime())
 				max_time.setTime(latest.getTime())
-				tdiff = ((max_time.getTime() - min_time.getTime()) / 86400000 );
+				tdiff = ((max_time.getTime() - min_time.getTime()) / 86400000 );*/
 				$( ".timeslider_input" ).val( show_time_from + " to " + show_time_to );
 			}
 
