@@ -787,9 +787,9 @@ overflow: auto;
 	$( function() {
     $( ".timeslider" ).slider({
 		  range: true,
-		  min: -360,
+		  min: -288,
 		  max: 0,
-		  values: [ -264, -168 ],
+		  values: [ -288, -168 ],
 		  slide: function( event, ui ) {
 			  min_time.setTime(earliest.getTime())
 			  min_time.setHours(earliest.getHours() + (360+ui.values[ 0 ]) );
