@@ -167,14 +167,14 @@ overflow: auto;
 <!-- load coarse polygons -->
 <script src="coarseBox.js"></script>
 <!-- load fine polygons -->
-<script src="fineBox.js"></script>
+<!--<script src="fineBox.js"></script>-->
 
 <!-- load county stats -->
 <script src="data/stats_overlap_county.js"></script>
 <!-- load coarse stats -->
 <script src="data/stats_overlap_10x10.js"></script>
 <!-- load fine stats -->
-<script src="data/stats_overlap_40x40.js  "></script>
+<!--<script src="data/stats_overlap_40x40.js  "></script>-->
 
 
 <script>
@@ -197,27 +197,35 @@ overflow: auto;
 
 	var stats_layer = L.layerGroup().addTo( map );
 	var count_layer = L.layerGroup();
-	var layer_polys = { "county" : fgsData , "fine" : fineBox, "coarse" : coarseBox}
+	//var layer_polys = { "county" : fgsData , "fine" : fineBox, "coarse" : coarseBox}
+	var layer_polys = { "county" : fgsData , "coarse" : coarseBox}
 	var county_layer = L.layerGroup().addTo( map ); //dummy layers to fool layer control
 	var coarse_layer = L.layerGroup();
-	var fine_layer = L.layerGroup();
+	//var fine_layer = L.layerGroup();
 
 	var active_layer = "stats";
 	var active_polys = "county"
 	var layers = ["stats", "count"];
-	var polys = ["county", "coarse", "fine"];
-	var polys_map = {"county" : "county", "coarse" : "10x10", "fine" : "40x40" };
+	//var polys = ["county", "coarse", "fine"];
+	var polys = ["county", "coarse"];
+	//var polys_map = {"county" : "county", "coarse" : "10x10", "fine" : "40x40" };
+	var polys_map = {"county" : "county", "coarse" : "10x10" };
 
 	var geojson; //basic count layer
 	var geojsonStats; //statistical significance layer
 
 	var tweetInfo = {}; 
-	var got = { "county":{}, "coarse":{}, "fine":{} };
-	var	numTweets = {"county" : {}, "coarse" : {}, "fine" : {}};
-	var	sigTweets = {"county" : {}, "coarse" : {}, "fine" : {}};
-	var stringTweets = {"county" : {}, "coarse" : {}, "fine" : {}};
+	//var got = { "county":{}, "coarse":{}, "fine":{} };
+	var got = { "county":{}, "coarse":{} };
+	//var	numTweets = {"county" : {}, "coarse" : {}, "fine" : {}};
+	var	numTweets = {"county" : {}, "coarse" : {}};
+	//var	sigTweets = {"county" : {}, "coarse" : {}, "fine" : {}};
+	var	sigTweets = {"county" : {}, "coarse" : {}};
+	//var stringTweets = {"county" : {}, "coarse" : {}, "fine" : {}};
+	var stringTweets = {"county" : {}, "coarse" : {}};
 	var B = countyStats["length"]; //number of stats days
-	var stats = {"county" : countyStats, "coarse" : coarseStats, "fine" : fineStats};
+	//var stats = {"county" : countyStats, "coarse" : coarseStats, "fine" : fineStats};
+	var stats = {"county" : countyStats, "coarse" : coarseStats};
 	var clicked = "";
 	
 	var show_time_from = "";
@@ -469,7 +477,7 @@ overflow: auto;
 				$( ".timeslider_input" ).val( show_time_from + " to " + show_time_to );
 			}
 
-			if( poly == "fine"){
+			/*if( poly == "fine"){
 				for( var i=0; i<fineBox["features"].length; i++){
 					var wt = numTweets[poly][ fineBox["features"][i]["properties"]["name"] ];
 					var swt = 0;
@@ -482,7 +490,7 @@ overflow: auto;
 					fineBox["features"][i]["properties"]["stats"] = pe;
 				}
 			}
-			else if( poly == "coarse"){
+			else*/ if( poly == "coarse"){
 				for( var i=0; i<coarseBox["features"].length; i++){
 					
 					var wt = numTweets[poly][ coarseBox["features"][i]["properties"]["name"] ];
@@ -524,9 +532,10 @@ overflow: auto;
 		datafile = "data/all_brian_tweets.json";
 		tweetkey = "all_tweets.json";
 		coarsekey = "all_10x10_tweets.json";
-		finekey = "all_40x40_tweets.json";
+		//finekey = "all_40x40_tweets.json";
 		countykey = "all_county_tweets.json";
-		return { "file" : datafile, "tweets" : tweetkey, "county" : countykey , "fine" : finekey, "coarse" : coarsekey }
+		//return { "file" : datafile, "tweets" : tweetkey, "county" : countykey , "fine" : finekey, "coarse" : coarsekey }
+		return { "file" : datafile, "tweets" : tweetkey, "county" : countykey, "coarse" : coarsekey }
 	}
 	function load_tweets(){
 		
@@ -747,7 +756,7 @@ overflow: auto;
 	var basemapControl2 = {
 	  "county": county_layer, 
 	  "coarse": coarse_layer,
-	  "fine": fine_layer 	
+	  //"fine": fine_layer 	
 	}
 	var layerControl2 = {}
 
@@ -762,7 +771,8 @@ overflow: auto;
 
 
 	map.on('baselayerchange', function(e) {
-		if( e.name == "coarse" || e.name == "fine" || e.name == "county" ){
+		//if( e.name == "coarse" || e.name == "fine" || e.name == "county" ){
+		if( e.name == "coarse" || e.name == "county" ){
 			active_polys = e.name;
 			load_tweets()
 		} else {
