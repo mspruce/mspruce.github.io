@@ -606,13 +606,12 @@ overflow: auto;
 	
 	legend.update = function () {
 
-		var labels = []
+		var labels = ['<strong> Exceedance Probability </strong>'];
 		var from, to;
 		var grades, getColor;
 		if(active_layer == "stats"){
 			grades = stats_grades;
 			getColor = getRedColor;
-			labels = ['<strong> Exceedance Probability </strong>'];
 		} else {
 			grades = count_grades;
 			getColor = getBlueColor;
