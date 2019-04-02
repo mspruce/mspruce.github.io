@@ -259,7 +259,7 @@ overflow: auto;
 	var time_keys = [];
 
 	//Style for chloropleth
-	function getBlueColor(d) {		
+	function getRedColor(d) {		
 		return d > 150  ? '#045A8D' :
 			   d > 50   ? '#2B8CBE' :
 			   d > 20   ? '#74A9CF' :
@@ -287,7 +287,7 @@ overflow: auto;
 		if( feature ){
 			if( feature.properties.count ){
 				return {
-					fillColor: getBlueColor(feature.properties.count),
+					fillColor: getRedColor(feature.properties.count),
 					weight: 1,
 					opacity: 1,
 					color: 'white',
@@ -296,7 +296,7 @@ overflow: auto;
 				};
 			} else {
 				return {
-					fillColor: getBlueColor(0),
+					fillColor: getRedColor(0),
 					weight: 1,
 					opacity: 1,
 					color: 'white',
@@ -320,7 +320,7 @@ overflow: auto;
 				};
 			} else {
 				return {
-					fillColor: getBlueColor(0),
+					fillColor: getRedColor(0),
 					weight: 1,
 					opacity: 1,
 					color: 'white',
@@ -618,7 +618,7 @@ overflow: auto;
 		var grades, getColor;
 		if(active_layer == "stats"){
 			grades = stats_grades;
-			getColor = getBlueColor;
+			getColor = getRedColor;
 			var labels = ['<strong> Exceedance Probability </strong>'];
 		} else {
 			grades = count_grades;
