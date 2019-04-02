@@ -618,11 +618,11 @@ overflow: auto;
 		var grades, getColor;
 		if(active_layer == "stats"){
 			grades = stats_grades;
-			getColor = getRedColor;
+			getColor = getBlueColor;
 			var labels = ['<strong> Exceedance Probability </strong>'];
 		} else {
 			grades = count_grades;
-			getColor = getBlueColor;
+			getColor = getRedColor;
 			var labels = ['<strong> Tweet Count </strong>'];
 		}
 		for (var i = 0; i < grades.length; i++) {
