@@ -260,16 +260,11 @@ overflow: auto;
 
 	//Style for chloropleth
 	function getBlueColor(d) {		
-		/*return d > 150  ? '#045A8D' :
+		return d > 150  ? '#045A8D' :
 			   d > 50   ? '#2B8CBE' :
 			   d > 20   ? '#74A9CF' :
 			   d > 10   ? '#BDC9E1' :
-						  '#F1EEF6';  */
-		return d > stats_grades[1] ? '#fee5d9' :
-				d > stats_grades[2] ? '#fcae91' :
-				d > stats_grades[3] ? '#fb6a4a' :
-				d > stats_grades[4] ? '#de2d26' :
-								'#a50f15';				  
+						  '#F1EEF6';  
 	}
 	function getRedColor(d) {
 		/*return d > 99.9  ? '#a50f15' :
@@ -277,16 +272,11 @@ overflow: auto;
 			   d > 99   ? '#fb6a4a' :
 			   d > 95   ? '#fcae91' :
 						  '#fee5d9';*/
-		/*return d > stats_grades[1] ? '#fee5d9' :
+		return d > stats_grades[1] ? '#fee5d9' :
 				d > stats_grades[2] ? '#fcae91' :
 				d > stats_grades[3] ? '#fb6a4a' :
 				d > stats_grades[4] ? '#de2d26' :
-								'#a50f15';*/
-		return d > 150  ? '#045A8D' :
-			   d > 50   ? '#2B8CBE' :
-			   d > 20   ? '#74A9CF' :
-			   d > 10   ? '#BDC9E1' :
-						  '#F1EEF6';  
+								'#a50f15';
 	}
 
 	function getFill(d) {
