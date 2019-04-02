@@ -260,11 +260,18 @@ overflow: auto;
 
 	//Style for chloropleth
 	function getBlueColor(d) {		
-		return d > 150  ? '#045A8D' :
+		/*return d > 150  ? '#045A8D' :
 			   d > 50   ? '#2B8CBE' :
 			   d > 20   ? '#74A9CF' :
 			   d > 10   ? '#BDC9E1' :
-						  '#F1EEF6';  
+						  '#F1EEF6';  */
+		//Temporarily return red colours instead of blue.  
+		//To revert back to blue use above
+		return d > 150  ? '#a50f15' :
+			   d > 50   ? '#de2d26' :
+			   d > 20   ? '#fb6a4a' :
+			   d > 10   ? '#fcae91' :
+						  '#fee5d9';  
 	}
 	function getRedColor(d) {
 		/*return d > 99.9  ? '#a50f15' :
