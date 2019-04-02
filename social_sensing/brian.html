@@ -613,15 +613,17 @@ overflow: auto;
 	
 	legend.update = function () {
 
-		var labels = ['<strong> Exceedance Probability </strong>'];
+		
 		var from, to;
 		var grades, getColor;
 		if(active_layer == "stats"){
 			grades = stats_grades;
 			getColor = getRedColor;
+			var labels = ['<strong> Exceedance Probability </strong>'];
 		} else {
 			grades = count_grades;
 			getColor = getBlueColor;
+			var labels = ['<strong> Tweet Count </strong>'];
 		}
 		for (var i = 0; i < grades.length; i++) {
 			from = grades[i];
