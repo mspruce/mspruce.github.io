@@ -259,7 +259,7 @@ overflow: auto;
 	var time_keys = [];
 
 	//Style for chloropleth
-	function getRedColor(d) {		
+	function getBlueColor(d) {		
 		return d > 150  ? '#045A8D' :
 			   d > 50   ? '#2B8CBE' :
 			   d > 20   ? '#74A9CF' :
@@ -287,7 +287,7 @@ overflow: auto;
 		if( feature ){
 			if( feature.properties.count ){
 				return {
-					fillColor: getRedColor(feature.properties.count),
+					fillColor: getBlueColor(feature.properties.count),
 					weight: 1,
 					opacity: 1,
 					color: 'white',
@@ -296,7 +296,7 @@ overflow: auto;
 				};
 			} else {
 				return {
-					fillColor: getRedColor(0),
+					fillColor: getBlueColor(0),
 					weight: 1,
 					opacity: 1,
 					color: 'white',
@@ -320,7 +320,7 @@ overflow: auto;
 				};
 			} else {
 				return {
-					fillColor: getRedColor(0),
+					fillColor: getBlueColor(0),
 					weight: 1,
 					opacity: 1,
 					color: 'white',
@@ -622,7 +622,7 @@ overflow: auto;
 			var labels = ['<strong> Exceedance Probability </strong>'];
 		} else {
 			grades = count_grades;
-			getColor = getRedColor;
+			getColor = getBlueColor;
 			var labels = ['<strong> Tweet Count </strong>'];
 		}
 		for (var i = 0; i < grades.length; i++) {
